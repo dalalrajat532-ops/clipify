@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clipify - AI Video Clipper</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#09090f;color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ padding:22px 8%;display:flex;
+ justify-content:space-between;align-items:center;
+ border-bottom:1px solid #252535;
+}
+.logo{font-size:27px;font-weight:bold;color:#a78bfa}
+nav{color:#aaa;font-size:14px}
+main{max-width:850px;margin:75px auto;padding:20px;text-align:center}
+h1{font-size:clamp(36px,8vw,58px);margin-bottom:15px}
+h1 span{color:#a78bfa}
+p{color:#aaa;line-height:1.7}
+.upload{
+ margin:35px auto;padding:45px 15px;
+ border:2px dashed #66518e;border-radius:18px;
+ background:#151321;
+}
+.upload input{max-width:100%;margin-top:20px}
+button{
+ border:0;border-radius:10px;padding:15px 25px;
+ background:#8b5cf6;color:white;font-weight:bold;
+ font-size:16px;cursor:pointer;margin-top:20px;
+}
+button:hover{background:#7041d6}
+#status{color:#c4b5fd;margin-top:20px}
+footer{padding:30px;text-align:center;color:#777}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">✦ CLIPIFY</div>
+ <nav>AI VIDEO CLIP GENERATOR</nav>
+</header>
+<main>
+ <h1>Turn Long Videos Into <span>Viral Shorts.</span></h1>
+ <p>Upload your video. Let AI discover the best moments.</p>
+ <div class="upload">
+  <h2>☁ Upload Your Video</h2>
+  <p>Choose a video from your device</p>
+  <input type="file" id="video" accept="video/*">
+  <br>
+  <button onclick="generate()">Generate Clips ✨</button>
+  <div id="status"></div>
+ </div>
+ <p>Automatic captions • Smart clips • Vertical videos</p>
+</main>
+<footer>© 2026 Clipify. Create something amazing.</footer>
+<script>
+function generate(){
+ const file=document.getElementById('video').files[0];
+ const status=document.getElementById('status');
+ if(!file){
+  status.textContent="Please select a video first.";
+  return;
+ }
+ status.textContent="Video selected: "+file.name+
+ ". AI processing will be connected in the next phase.";
+}
+</script>
+</body>
+</html>
